@@ -1,5 +1,5 @@
 # Workflow
-## Initial use
+## Initial use (genTranslates.js)
 For the initial use, we assume there have been no previous translations.
 
 **Inputs: source/English interview**
@@ -10,15 +10,15 @@ Tool takes a source/English interview, traverses the component files to extract 
 
 The translation document is an MS Word compatible HTML file with a single <TABLE>. Each row has two cells; on the left is the text/HTML block to be translated, and on the right is an empty cell. Translator should be able to take this document and translate the text into the right-hand column.
 
-## Doing the translation
+## Doing the translation (manual)
 Translator takes the translation document and puts formatted, translated text in a single destination language into the right hand column.
 Once the translation document is completed, it is placed into a folder/directory that holds all translation documents for that destination language.
 For example: all Spanish translations will be in their own directory, separate from the Vietnamese translations, which are themselves in their own different directory.
 
-## Making translated interview
+## Making translated interview (transIviewInPlace.js)
 In this step we take the existing translation documents, a source interview, and generate a translated interview.
 
-**Inputs: source/English interview, translation document directory**
+**Inputs: (copy of) source/English interview, translation document directory**
 
 **Output: translated interview**
 
@@ -28,7 +28,9 @@ The tool traverses the source interview to identify each source text block. The 
 
 When all the source text blocks have been translated, the tool generates a new translated interview.
 
-## Update the source/English interview
+**CAUTION!!** This process **EDITS IN PLACE** so make sure you pass in a copy of the original source/English interview.
+
+## Update the source/English interview (manual)
 In this step, the A2J programmer(s) make changes to the source/English interview. It is assumed that in this version new text blocks will be created which will need to be translated.
 
 Sometimes the “new” text block is a modification, no matter how small, of an existing text block. A modification can be as small as a change in the font, size, or weight, and not involve any changes to what we would consider the readable text.
@@ -36,7 +38,7 @@ Sometimes the “new” text block is a modification, no matter how small, of an
 The tool cannot tell the difference; the match is made on the whole HTML representation of the text if it is rich text. 
 Perhaps a later iteration of the tool can be more sophisticated and work at the element level (e.g., DIV, SPAN, P) of the rich text instead of the whole block.
 
-## Generating new translation file
+## Generating new translation file (genTranslates.js)
 **Inputs: updated source/English interview, destination translation document directory**
 
 **Output: translation document**

@@ -1,0 +1,19 @@
+{
+  "name": "a2j-translation-tools",
+  "version": "1.0.0",
+  "description": "Translations tools for A2J interviews",
+  "main": "index.js",
+  "dependencies": {
+    "htmlparser2": "^4.1.0",
+    "memory-streams": "^0.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "A2J"
+  ],
+  "author": "Luigi Bai",
+  "license": "GPL-3.0-or-later"
+}
